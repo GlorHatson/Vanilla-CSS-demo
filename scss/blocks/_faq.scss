@@ -1,0 +1,80 @@
+.faq {
+  margin: 0 0 58px 0;
+
+  @include vp-768 {
+    margin: 0 0 100px 0;
+  }
+
+  @include vp-1304 {
+    margin: 0 0 120px 0;
+  }
+
+  &__wrapper {
+    @include vp-1024{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0 24px;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__heading {
+    margin: 0 0 14px 0;
+
+    @include vp-768 {
+      margin: 0 0 21px 0;
+    }
+
+    @include vp-1024 {
+      margin: 0;
+      max-width: 380px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 100px;
+      z-index: 5;
+    }
+  }
+
+  &__icon-wrapper {
+    margin: 0 0 15px 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    border-radius: 12px;
+    background-color: $color-royal-blue-1;
+
+    @include vp-1024 {
+      margin: 0 0 20px 0;
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+
+    @include vp-768 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    @include vp-1024{
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: -0.04em;
+    }
+  }
+}

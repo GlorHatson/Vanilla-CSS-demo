@@ -1,0 +1,160 @@
+  .faq-accordion {
+      display: flex;
+      flex-direction: column;
+
+      @include vp-1024 {
+          max-width: 700px;
+          gap: 16px 0;
+      }
+
+      &__input {
+          &:focus-visible+.faq-accordion__title {
+              outline: 1px solid $color-royal-blue-1;
+              outline-offset: 16px;
+              border-radius: 4px;
+          }
+      }
+
+      &__item {
+          border-bottom: 2px solid $color-solitude-3;
+
+          @include vp-1024 {
+              border: none;
+              background: $color-solitude-1;
+              border-radius: 12px;
+              padding: 18px 24px;
+          }
+      }
+
+      &__input:checked~.faq-accordion__content {
+          grid-template-rows: 1fr;
+      }
+
+      &__input:checked+.faq-accordion__title::after {
+          transform: rotate(90deg);
+      }
+
+      &__input:focus-visible+.faq-accordion__title,
+      &__input:hover+.faq-accordion__title {
+          color: $color-storm-grey-3;
+      }
+
+      &__title {
+          max-width: 100%;
+          padding: 14px 40px 16px 0;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          line-height: 22px;
+          color: $color-black-russian;
+          border: none;
+          cursor: pointer;
+          position: relative;
+
+
+          @include vp-768 {
+              padding: 19px 0;
+          }
+
+          @include vp-1024 {
+              align-items: flex-start;
+              padding: 0 55px 0 0;
+              font-size: 18px;
+              line-height: 24px;
+          }
+
+          &::before,
+          &::after {
+              content: "";
+              position: absolute;
+              right: 0px;
+              top: 35px;
+              background-color: $color-black;
+              width: 16px;
+              height: 2px;
+
+              @include vp-768 {
+                  right: 0px;
+                  top: 29px;
+              }
+
+              @include vp-1024 {
+                  width: 20px;
+                  right: 0px;
+                  top: 10px;
+              }
+          }
+
+          &::after {
+              width: 2px;
+              height: 16px;
+              right: 7px;
+              top: 28px;
+              transition: transform 0.3s;
+
+              @include vp-768 {
+                  right: 7px;
+                  top: 22px;
+              }
+
+              @include vp-1024 {
+                  height: 20px;
+                  right: 9px;
+                  top: 1px;
+              }
+          }
+      }
+
+      &__content {
+          display: grid;
+          grid-template-rows: 0fr;
+          overflow: hidden;
+          transition: grid-template-rows 0.3s ease-out;
+      }
+
+      &__inner {
+          min-height: 0;
+      }
+
+      &__text {
+          margin: 0 0 16px;
+          font-size: 14px;
+          line-height: 18px;
+
+          @include vp-768 {
+              margin: -4px 0 20px;
+          }
+
+          @include vp-1024 {
+              margin: 20px 0 6px;
+          }
+
+          @include vp-1304 {
+              max-width: calc(100% - 34px);
+          }
+      }
+
+      &__sublist {
+          list-style: none;
+          padding: 0;
+      }
+
+      &__subitem {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 10px;
+      }
+
+      &__subicon {
+          flex-shrink: 0;
+          width: 16px;
+          height: 16px;
+          margin: 2px 0 0;
+          color: $color-royal-blue-1;
+      }
+
+      &__subinfo {
+          font-size: 14px;
+          line-height: 18px;
+      }
+  }

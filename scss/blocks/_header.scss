@@ -1,0 +1,260 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 15px 0;
+  background: $color-solitude-1;
+
+
+  @include vp-768 {
+    padding: 20px 0;
+  }
+
+  @include vp-1024 {
+    padding: 16px 0;
+    background: linear-gradient(180deg, $color-white, $color-solitude-4);
+    backdrop-filter: blur(16px);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__toggle {
+    &:checked~.header__menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(30%, -30%);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+    position: absolute;
+    top: 80%;
+    right: 0;
+    min-width: 360px;
+    padding: 10px;
+    background-color: $color-solitude-4;
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+    @include vp-1024 {
+      display: none !important;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__nav-link {
+    font-size: 16px;
+    color: $color-black-russian;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-royal-blue-1;
+    }
+  }
+
+  &__nav-item--city {
+    position: relative;
+  }
+
+  &__nav-link--city {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__city-arrow {
+    transition: transform 0.3s ease;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  #city-toggle:checked+.header__nav-link--city .header__city-arrow {
+    transform: rotate(90deg);
+  }
+
+  #city-toggle:checked~.header__city-list {
+    display: block;
+  }
+
+  &__city-list {
+    display: none;
+    list-style: none;
+    padding: 8px 0 0 20px;
+    margin: 4px 0 0 0;
+    border-left: 2px solid $color-royal-blue-1;
+  }
+
+  &__city-link {
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+    color: $color-storm-grey-1;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-royal-blue-1;
+    }
+  }
+
+
+  @include vp-1024 {
+    .header__nav-item--city {
+      display: none;
+    }
+  }
+
+
+  &__login-mobile {
+    display: block;
+    margin-top: 10px;
+
+    @include vp-1024 {
+      display: none;
+    }
+  }
+
+  &__icon-decor {
+    display: none;
+    width: 24px;
+    height: 24px;
+    margin: 0 24px 0 0;
+    color: $color-grayish-blue;
+
+    &:hover {
+      color: $color-black;
+    }
+
+    @include vp-1024 {
+      display: block;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    margin: 0 auto 0 0;
+    color: $color-royal-blue-1;
+
+    @include vp-768 {
+      margin: 0 40px 0 0;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-free-speech-blue;
+    }
+  }
+
+  &__logo-image {
+    @include vp-1024 {
+      width: 170px;
+      height: 36px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+
+    &:first-of-type {
+      margin: 0 auto 0 0;
+    }
+
+    &:last-of-type {
+      @include vp-1024 {
+        margin: 0 8px 0 0;
+      }
+    }
+  }
+
+  &__link {
+    display: none;
+    padding: 0;
+    margin: 0 20px 0 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-royal-blue-1;
+    }
+
+    @include vp-1024 {
+      display: flex;
+    }
+
+    &--light {
+      color: $color-storm-grey-1;
+
+      &:last-child {
+        margin: 0 auto 0 0;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: $color-black-russian;
+      }
+
+      @include vp-1024 {
+        display: none;
+      }
+
+      @include vp-1304 {
+        display: flex;
+      }
+    }
+
+    &--active {
+      color: $color-royal-blue-1;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-royal-blue-2;
+      }
+    }
+  }
+
+  &__search {
+    margin: 0 20px 0 0;
+
+    @include vp-1024 {
+      margin: 0 28px 0 0;
+    }
+  }
+
+  .header__login {
+    display: none;
+
+    @include vp-1024 {
+      display: flex;
+      margin: 0 16px 0 0;
+    }
+  }
+}

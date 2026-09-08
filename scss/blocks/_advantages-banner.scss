@@ -1,0 +1,117 @@
+.advantages-banner {
+    background: $color-alice-blue;
+    border-radius: 16px;
+    padding: 16px 20px;
+    position: relative;
+    margin-bottom: 60px;
+
+
+    &::before {
+        will-change: transform;
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(90deg, transparent 20%, rgba($color-white, 0.8) 40%, transparent 60%);
+        animation: pulseOverlay 5s linear infinite forwards;
+        pointer-events: none;
+    }
+
+    @include vp-768 {
+        padding: 25px 24px;
+    }
+
+    @include vp-1024 {
+        margin-bottom: 100px;
+        padding: 48px 100px;
+    }
+
+    @include vp-1304 {
+        padding: 48px 120px;
+        margin-bottom: 120px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 170px;
+
+        @include vp-768 {
+            max-width: 400px;
+        }
+
+        @include vp-1024 {
+            max-width: 450px;
+        }
+
+        @include vp-1304 {
+            max-width: 600px;
+        }
+    }
+
+    &__title {
+        z-index: 1;
+        margin: 0;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        max-height: 24px;
+        overflow: hidden;
+
+        @include vp-1024 {
+            font-size: 24px;
+            line-height: 28px;
+            max-height: 28px;
+        }
+    }
+
+    &__text {
+        z-index: 1;
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        max-height: 36px;
+        overflow: hidden;
+
+        @include vp-1024 {
+            font-size: 16px;
+            line-height: 22px;
+            max-height: 22px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 8px;
+        right: 1px;
+        pointer-events: none;
+
+        @include vp-768 {
+            bottom: 0px;
+            right: 40px;
+        }
+
+        @include vp-1304 {
+            right: 8%;
+        }
+
+        @media (min-width: 1536px) {
+            right: 15%;
+        }
+    }
+}
+
+@keyframes pulseOverlay {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    15% {
+        transform: translateX(50%);
+    }
+
+    30%,100% {
+        transform: translateX(100%);
+    }
+}
