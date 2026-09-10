@@ -322,28 +322,28 @@ template {
 /* ------------------------------------ */
 @font-face {
   font-family: "Noto Sans";
-  src: url("/Vanilla-CSS-demo/fonts/NotoSans-Regular.woff2") format("woff2"), url("/Vanilla-CSS-demo/fonts//NotoSans-Regular.woff") format("woff");
+  src: local("Noto Sans"), url("../fonts/NotoSans-Regular.woff2") format("woff2"), url("../fonts/NotoSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url("/Vanilla-CSS-demo/fonts/NotoSans-Medium.woff2") format("woff2"), url("/Vanilla-CSS-demo/fonts/NotoSans-Medium.woff") format("woff");
+  src: local("Noto Sans Medium"), url("../fonts/NotoSans-Medium.woff2") format("woff2"), url("../fonts/NotoSans-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url("/Vanilla-CSS-demo/fonts/NotoSans-SemiBold.woff2") format("woff2"), url("/Vanilla-CSS-demo/fonts/NotoSans-SemiBold.woff") format("woff");
+  src: local("Noto Sans SemiBold"), url("../fonts/NotoSans-SemiBold.woff2") format("woff2"), url("../fonts/NotoSans-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url("/Vanilla-CSS-demo/fonts/NotoSans-Bold.woff2") format("woff2"), url("/Vanilla-CSS-demo/fonts/NotoSans-Bold.woff") format("woff");
+  src: local("Noto Sans Bold"), url("../fonts/NotoSans-Bold.woff2") format("woff2"), url("../fonts/NotoSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -678,7 +678,7 @@ button {
   display: block;
   width: 24px;
   height: 2px;
-  background-color: #1E222E;
+  background-color: #40465A;
   border-radius: 2px;
   position: relative;
   transition: transform 0.3s 0.3s, background-color 0s 0.3s;
@@ -689,7 +689,7 @@ button {
   left: 50%;
   width: 24px;
   height: 2px;
-  background-color: #1E222E;
+  background-color: #40465A;
   border-radius: 2px;
   transform: translateX(-50%);
   transition: top 0.3s 0.3s, transform 0.3s, background-color 0.3s;
@@ -2758,7 +2758,7 @@ button {
   position: absolute;
   right: 0px;
   top: 35px;
-  background-color: #000000;
+  background-color: #40465A;
   width: 16px;
   height: 2px;
 }

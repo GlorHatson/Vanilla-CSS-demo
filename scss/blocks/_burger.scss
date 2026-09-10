@@ -12,7 +12,7 @@
         &,
         &::before,
         &::after {
-            background-color: $color-royal-blue-1;
+            background-color:  $color-royal-blue-1;
         }
     }
 
@@ -20,7 +20,7 @@
         display: block;
         width: 24px;
         height: 2px;
-        background-color: $color-black-russian;
+        background-color: $color-blue-zodiac-2;
         border-radius: 2px;
         position: relative;
         transition: transform 0.3s 0.3s, background-color 0s 0.3s;
@@ -32,7 +32,7 @@
             left: 50%;
             width: 24px;
             height: 2px;
-            background-color: $color-black-russian;
+            background-color: $color-blue-zodiac-2;
             border-radius: 2px;
             transform: translateX(-50%);
             transition: top 0.3s 0.3s, transform 0.3s, background-color 0.3s;
@@ -49,7 +49,7 @@
 }
 
 .header__toggle:checked+.header__burger .header__burger-line {
-    background-color: $color-royal-blue-1;
+    background-color:$color-royal-blue-1;
     transform: translateX(2px) rotate(90deg);
 
     &::before {
